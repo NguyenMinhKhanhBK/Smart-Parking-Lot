@@ -1,0 +1,119 @@
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\Smart Parking Lot.exe.config
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\Smart Parking Lot.exe
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\Smart Parking Lot.pdb
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\obj\Debug\MainWindow.g.cs
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\obj\Debug\App.g.cs
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\obj\Debug\Smart Parking Lot_MarkupCompile.cache
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\obj\Debug\Smart Parking Lot_MarkupCompile.lref
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\obj\Debug\MainWindow.baml
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\obj\Debug\Smart Parking Lot.g.resources
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\obj\Debug\Smart_Parking_Lot.Properties.Resources.resources
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\obj\Debug\Smart Parking Lot.csproj.GenerateResource.cache
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\obj\Debug\Smart Parking Lot.csproj.CoreCompileInputs.cache
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\obj\Debug\Smart Parking Lot.exe
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\obj\Debug\Smart Parking Lot.pdb
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Data.v18.1.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Mvvm.v18.1.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Printing.v18.1.Core.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Xpf.Core.v18.1.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Pdf.v18.1.Core.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Data.v18.1.xml
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Mvvm.v18.1.xml
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Printing.v18.1.Core.xml
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Xpf.Core.v18.1.xml
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Pdf.v18.1.Core.xml
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\de\DevExpress.Data.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\es\DevExpress.Data.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ja\DevExpress.Data.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ru\DevExpress.Data.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\de\DevExpress.Printing.v18.1.Core.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\es\DevExpress.Printing.v18.1.Core.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ja\DevExpress.Printing.v18.1.Core.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ru\DevExpress.Printing.v18.1.Core.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\de\DevExpress.Xpf.Core.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\es\DevExpress.Xpf.Core.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ja\DevExpress.Xpf.Core.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ru\DevExpress.Xpf.Core.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\de\DevExpress.Pdf.v18.1.Core.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\es\DevExpress.Pdf.v18.1.Core.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ja\DevExpress.Pdf.v18.1.Core.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ru\DevExpress.Pdf.v18.1.Core.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\obj\Debug\Smart Parking Lot.exe.licenses
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\obj\Debug\Smart Parking Lot.csproj.CopyComplete
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\Dragablz.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\Dragablz.pdb
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\Dragablz.xml
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\MaterialDesignColors.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\obj\Debug\App.baml
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\MaterialDesignColors.pdb
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\obj\Debug\Smart Parking Lot.csprojAssemblyReference.cache
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\obj\Debug\Resource\gridBooked.g.cs
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\obj\Debug\Resource\gridBooked.baml
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\obj\Debug\Resource\gridAvailable.g.cs
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\obj\Debug\Resource\gridOccupied.g.cs
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\obj\Debug\Resource\gridAvailable.baml
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\obj\Debug\Resource\gridOccupied.baml
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Charts.v18.1.Core.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Xpf.Charts.v18.1.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Xpf.Printing.v18.1.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Xpf.DocumentViewer.v18.1.Core.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Xpf.Ribbon.v18.1.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Xpf.Docking.v18.1.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Xpf.LayoutControl.v18.1.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.RichEdit.v18.1.Core.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Xpf.Grid.v18.1.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Xpf.Grid.v18.1.Core.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Xpf.Layout.v18.1.Core.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Office.v18.1.Core.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Images.v18.1.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Xpf.Charts.v18.1.xml
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Xpf.Printing.v18.1.xml
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Xpf.DocumentViewer.v18.1.Core.xml
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Xpf.Ribbon.v18.1.xml
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Xpf.Docking.v18.1.xml
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Xpf.LayoutControl.v18.1.xml
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.RichEdit.v18.1.Core.xml
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Xpf.Grid.v18.1.xml
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Xpf.Grid.v18.1.Core.xml
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Xpf.Layout.v18.1.Core.xml
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\DevExpress.Office.v18.1.Core.xml
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\de\DevExpress.Xpf.Charts.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\es\DevExpress.Xpf.Charts.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ja\DevExpress.Xpf.Charts.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ru\DevExpress.Xpf.Charts.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\de\DevExpress.Xpf.Printing.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\es\DevExpress.Xpf.Printing.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ja\DevExpress.Xpf.Printing.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ru\DevExpress.Xpf.Printing.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\de\DevExpress.Xpf.DocumentViewer.v18.1.Core.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\es\DevExpress.Xpf.DocumentViewer.v18.1.Core.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ja\DevExpress.Xpf.DocumentViewer.v18.1.Core.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ru\DevExpress.Xpf.DocumentViewer.v18.1.Core.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\de\DevExpress.Xpf.Ribbon.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\es\DevExpress.Xpf.Ribbon.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ja\DevExpress.Xpf.Ribbon.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ru\DevExpress.Xpf.Ribbon.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\de\DevExpress.Xpf.Docking.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\es\DevExpress.Xpf.Docking.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ja\DevExpress.Xpf.Docking.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ru\DevExpress.Xpf.Docking.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\de\DevExpress.Xpf.LayoutControl.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\es\DevExpress.Xpf.LayoutControl.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ja\DevExpress.Xpf.LayoutControl.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ru\DevExpress.Xpf.LayoutControl.v18.1.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\de\DevExpress.RichEdit.v18.1.Core.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\es\DevExpress.RichEdit.v18.1.Core.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ja\DevExpress.RichEdit.v18.1.Core.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ru\DevExpress.RichEdit.v18.1.Core.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\de\DevExpress.Xpf.Grid.v18.1.Core.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\es\DevExpress.Xpf.Grid.v18.1.Core.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ja\DevExpress.Xpf.Grid.v18.1.Core.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ru\DevExpress.Xpf.Grid.v18.1.Core.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\de\DevExpress.Office.v18.1.Core.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\es\DevExpress.Office.v18.1.Core.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ja\DevExpress.Office.v18.1.Core.resources.dll
+C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\bin\Debug\ru\DevExpress.Office.v18.1.Core.resources.dll

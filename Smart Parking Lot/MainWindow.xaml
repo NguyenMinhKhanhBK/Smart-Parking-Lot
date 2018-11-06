@@ -1,0 +1,260 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Smart_Parking_Lot"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" x:Class="Smart_Parking_Lot.MainWindow"
+        xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"  
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:MyResource="clr-namespace:Smart_Parking_Lot.Resource"
+    mc:Ignorable="d"
+        Title="Smart Parking Lot" Height="1081" Width="1920" WindowStartupLocation="Manual" Icon="Image/icon.png" Background="#FFEAEAEA">
+    <Window.Effect>
+        <DropShadowEffect BlurRadius="20" RenderingBias="Quality" Color="#FFD6D6D6"/>
+    </Window.Effect>
+    <Window.Resources>
+        <Style TargetType="{x:Type dragablz:TabablzControl}" BasedOn="{StaticResource MaterialDesignTabablzControlStyle}">
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style TargetType="dragablz:DragablzItem" BasedOn="{StaticResource MaterialDesignDragableTabItemStyle}">
+                        <Setter Property="Height" Value="70" />
+                        <Setter Property="Width" Value="200" />
+                        <Setter Property="FontSize" Value="20"></Setter>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="styleBooked" TargetType="Grid">
+
+
+        </Style>
+    </Window.Resources>
+
+    
+    <Grid>
+        <dragablz:TabablzControl FixedHeaderCount="5" Margin="0,0,0,-5" Padding="2" BorderThickness="2,0,2,2">
+
+            <!--MAN HINH CHINH-->
+            <TabItem>
+                <!--Declare header name-->
+                <TabItem.Header>
+                    <Grid  VerticalAlignment="Center">
+                        <materialDesign:PackIcon Kind="HomeOutline" Foreground="White" Height="20" Width="20" HorizontalAlignment="Left" Margin="-10,0,0,0" VerticalAlignment="Center"></materialDesign:PackIcon>
+                        <TextBlock Text="Màn hình chính" Foreground="White" FontSize="20"  Margin="20,0,0,0"></TextBlock>
+                    </Grid>
+                </TabItem.Header>
+            <!--Main grid in MAN HINH CHINH-->
+                <Grid>
+                    
+                    <!--Divide the grid into 2 cols and 2 rows-->
+                    <!--First col for the parking lot diagram-->
+                    <!--The other col for the list of current customer, car counter and alarms-->
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1.5*"></RowDefinition>
+                        <RowDefinition Height="2*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <!--PARKING LOT DIAGRAM-->
+                    <Border  Margin="20,20,10,30" CornerRadius="8" BorderBrush="White" BorderThickness="0" Background="White" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2">
+                        <Border.Effect>
+                            <DropShadowEffect Color="#FFC1C1C1" RenderingBias="Quality" BlurRadius="20" ShadowDepth="5"/>
+                        </Border.Effect>
+                        
+                        <Grid Grid.Row="0" Grid.Column="0" >
+                            
+                            <!--Name: So do bai xe-->
+                            <TextBlock Text="Sơ đồ bãi xe" FontSize="40" Foreground="#FF5D00FF" Margin="40,10" >
+                                <!--<TextBlock.Effect>
+                                    <DropShadowEffect Color="#FFC5C5C5" RenderingBias="Quality" BlurRadius="30" ShadowDepth="2"/>
+                                </TextBlock.Effect>-->
+                            </TextBlock>
+                            
+                            <!--Divide the grid into 12 parts for each station-->
+                            <Grid Margin="0,60,0,10">
+                                <Grid.Effect>
+                                    <DropShadowEffect BlurRadius="20" RenderingBias="Quality" Color="#FFB9B9B9"/>
+                                </Grid.Effect>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"></RowDefinition>
+                                    <RowDefinition Height="1*"></RowDefinition>
+                                    <RowDefinition Height="1*"></RowDefinition>
+                                    <RowDefinition Height="1*"></RowDefinition>
+                                    <RowDefinition Height="1*"></RowDefinition>
+                                    <RowDefinition Height="1*"></RowDefinition>
+                                </Grid.RowDefinitions>
+
+                                <!--Row 0 - Col 0 slot-->
+                                <Grid  Grid.Column="0" Grid.Row="0">
+                                    <MyResource:gridBooked></MyResource:gridBooked>
+                                </Grid>
+
+                                <!--Row 0 - Col 1 slot-->
+                                <Grid  Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <MyResource:gridAvailable></MyResource:gridAvailable>
+                                </Grid>
+
+                                <!--Row 1 - Col 0 slot-->
+                                <Grid  Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <MyResource:gridOccupied></MyResource:gridOccupied>
+                                </Grid>
+
+                                <!--Row 1 - Col 1 slot-->
+                                <Grid  Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <MyResource:gridAvailable></MyResource:gridAvailable>
+                                </Grid>
+
+                                <!--Row 2 - Col 0 slot-->
+                                <Grid  Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <MyResource:gridBooked></MyResource:gridBooked>
+                                </Grid>
+
+                                <!--Row 2 - Col 1 slot-->
+                                <Grid  Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <MyResource:gridBooked></MyResource:gridBooked>
+                                </Grid>
+
+                                <!--Row 3 - Col 0 slot-->
+                                <Grid  Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <MyResource:gridBooked></MyResource:gridBooked>
+                                </Grid>
+
+                                <!--Row 3 - Col 1 slot-->
+                                <Grid  Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <MyResource:gridBooked></MyResource:gridBooked>
+                                </Grid>
+
+                                <!--Row 4 - Col 0 slot-->
+                                <Grid  Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <MyResource:gridBooked></MyResource:gridBooked>
+                                </Grid>
+
+                                <!--Row 4 - Col 1 slot-->
+                                <Grid  Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <MyResource:gridBooked></MyResource:gridBooked>
+                                </Grid>
+
+                                <!--Row 5 - Col 0 slot-->
+                                <Grid  Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <MyResource:gridBooked></MyResource:gridBooked>
+                                </Grid>
+
+                                <!--Row 5 - Col 1 slot-->
+                                <Grid  Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <MyResource:gridBooked></MyResource:gridBooked>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                    
+                    <!--CAR COUNTER-->
+                    <Grid Grid.Column="1" Grid.Row="0">
+                        <Border  CornerRadius="8" Margin="0,20" BorderBrush="White" BorderThickness="0" Background="White">
+                            <Border.Effect>
+                                <DropShadowEffect Color="#FFC1C1C1" RenderingBias="Quality" BlurRadius="20" ShadowDepth="5"/>
+                            </Border.Effect>
+                            <Grid>
+                                <TextBlock Text="Thống kê hiện tại" FontSize="40" Foreground="#FF5D00FF" Margin="40,10" >
+                                    <!--<TextBlock.Effect>
+                                        <DropShadowEffect Color="#FFC5C5C5" RenderingBias="Quality" BlurRadius="30" ShadowDepth="2"/>
+                                    </TextBlock.Effect>-->
+                                </TextBlock>
+                                <TextBlock Text="Tạo ra cuối cùng vì rất lag" Foreground="Red" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                            
+                                
+                            <!--NEXT ITEM WILL BE HERE-->
+                                
+                                
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    
+                    <!--ALARM-->
+                    <Grid Grid.Column="2" Grid.Row="0">
+                        <Border  CornerRadius="8" Margin="10,20,10,20" BorderBrush="White" BorderThickness="0" Background="White">
+                            <Border.Effect>
+                                <DropShadowEffect Color="#FFC1C1C1" RenderingBias="Quality" BlurRadius="20" ShadowDepth="5"/>
+                            </Border.Effect>
+                            <Grid>
+                                <TextBlock Text="Trạng thái hoạt động" FontSize="40" Foreground="#FF7400FF" Margin="40,10" >
+
+                                </TextBlock>
+                               
+                                <StackPanel Margin="10,60,10,10">
+                                    <StackPanel Margin="20">
+                                        <materialDesign:PackIcon Kind="Motor" Height="100" Width="100" Foreground="Green"></materialDesign:PackIcon>
+                                    </StackPanel>
+                                    
+                                    <TextBlock Text="Cảm biến" Foreground="Red" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <!--CURRENT CUSTOMERS LIST-->
+
+                </Grid>
+            </TabItem>
+<!-- ************************************************************************************************-->
+            
+            <!--THIET LAP-->
+            <TabItem>
+                <TabItem.Header>
+                    <Grid  VerticalAlignment="Center">
+                        <materialDesign:PackIcon Kind="SettingsOutline"  Foreground="White" Height="20" Width="20" HorizontalAlignment="Left" Margin="-10,0,0,0" VerticalAlignment="Center"></materialDesign:PackIcon>
+                        <TextBlock Text="Thiết lập" Foreground="White" FontSize="20"  Margin="20,0,0,0"></TextBlock>
+                    </Grid>
+                </TabItem.Header>
+            </TabItem>
+<!-- ************************************************************************************************-->
+            
+            <!--THONG KE-->
+            <TabItem>
+                <TabItem.Header>
+                    <Grid  VerticalAlignment="Center">
+                        <materialDesign:PackIcon Kind="ChartFinance"  Foreground="White" Height="20" Width="20" HorizontalAlignment="Left" Margin="-10,0,0,0" VerticalAlignment="Center"></materialDesign:PackIcon>
+                        <TextBlock Text="Thống kê" Foreground="White" FontSize="20"  Margin="20,0,0,0"></TextBlock>
+                    </Grid>
+                </TabItem.Header>
+            </TabItem>
+<!-- ************************************************************************************************-->
+            
+            <!--DANH SACH CHAN-->
+            <TabItem>
+                <TabItem.Header>
+                    <Grid  VerticalAlignment="Center">
+                        <materialDesign:PackIcon Kind="BlockHelper"  Foreground="White" Height="17" Width="17" HorizontalAlignment="Left" Margin="-10,0,0,0" VerticalAlignment="Center"></materialDesign:PackIcon>
+                        <TextBlock Text="Danh sách chặn" Foreground="White" FontSize="20"  Margin="20,0,0,0"></TextBlock>
+                    </Grid>
+                </TabItem.Header>
+            </TabItem>
+<!-- ************************************************************************************************-->
+
+            <!--CANH BAO-->
+            <TabItem>
+                <TabItem.Header>
+                    <Grid  VerticalAlignment="Center">
+                        <materialDesign:PackIcon Kind="WarningOutline"  Foreground="White" Height="20" Width="20" HorizontalAlignment="Left" Margin="-10,0,0,0" VerticalAlignment="Center"></materialDesign:PackIcon>
+                        <TextBlock Text="Cảnh báo" Foreground="White" FontSize="20"  Margin="20,0,0,0"></TextBlock>
+                    </Grid>
+                </TabItem.Header>
+            </TabItem>
+<!-- ************************************************************************************************-->
+            
+        </dragablz:TabablzControl>
+    </Grid>
+
+
+
+</Window>
