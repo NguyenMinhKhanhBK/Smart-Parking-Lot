@@ -142,5 +142,27 @@
   <ItemGroup>
     <Resource Include="Image\icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\motorGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\motorOrange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\motorRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\carSensorGray.png" />
+    <Resource Include="Image\carSensorGreen.png" />
+    <Resource Include="Image\carSensorOrange.png" />
+    <Resource Include="Image\carSensorRed.png" />
+    <Resource Include="Image\motorGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\detectorGray.png" />
+    <Resource Include="Image\detectorGreen.png" />
+    <Resource Include="Image\detectorOrange.png" />
+    <Resource Include="Image\detectorRed.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
