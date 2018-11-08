@@ -9,6 +9,7 @@
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:MyResource="clr-namespace:Smart_Parking_Lot.Resource"
+    xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts"
     Width="1920"
     Height="1081"
     mc:Ignorable="d"
@@ -237,9 +238,9 @@
                                     RenderingBias="Quality"
                                     ShadowDepth="5" />
                             </Border.Effect>
-                            <Grid>
+                            <StackPanel>
                                 <TextBlock
-                                    Margin="40,10"
+                                    Margin="40 10 0 0"
                                     FontSize="40"
                                     Foreground="#FF5D00FF"
                                     Text="Thống kê hiện tại">
@@ -247,14 +248,30 @@
                                         <DropShadowEffect Color="#FFC5C5C5" RenderingBias="Quality" BlurRadius="30" ShadowDepth="2"/>
                                     </TextBlock.Effect>-->
                                 </TextBlock>
-                                <TextBlock
-                                    HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"
-                                    FontSize="40"
-                                    Foreground="Red"
-                                    Text="Tạo ra cuối cùng vì rất lag" />
+                                <Grid>
+                                    <dxc:ChartControl Margin="0 0 0 0">
+                                        <dxc:ChartControl.Legends>
+                                            <dxc:Legend  HorizontalPosition="Left" VerticalPosition="Top" MarkerMode="Marker" Visible="True" ReverseItems="False" Orientation="Vertical" IndentFromDiagram="-10" ItemVisibilityMode="Default" Foreground="#FF050505" FontSize="10">
+                                                <dxc:Legend.Title>
+                                                    <dxc:LegendTitle Content="Tổng số chỗ: 12" HorizontalAlignment="Center" Visible="{x:Null}"/>
+                                                </dxc:Legend.Title>
+                                            </dxc:Legend>
+                                        </dxc:ChartControl.Legends>
+
+
+
+                                        <dxc:SimpleDiagram2D VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="20">
+                                            <dxc:NestedDonutSeries2D DisplayName="Thống kê hiện tại" LabelsVisibility="False" ShowInLegend="True" Visible="True" Weight="2"  LegendTextPattern="{}{A}:   {V}" ToolTipPointPattern="{}{V}">
+                                                <dxc:SeriesPoint Argument="Số chỗ trống" Value="5" Brush="#FF00C52A"/>
+                                                <dxc:SeriesPoint Argument="Số chỗ được đặt" Value="3" Brush="#FFFFD100"/>
+                                                <dxc:SeriesPoint Argument="Số chỗ có xe" Value="4" Brush="Red"/>
+                                            </dxc:NestedDonutSeries2D>
+                                        </dxc:SimpleDiagram2D>
+                                    </dxc:ChartControl>
+                                </Grid>
+                                
                                 <!--NEXT ITEM WILL BE HERE-->
-                            </Grid>
+                            </StackPanel>
                         </Border>
                     </Grid>
                     <!--ALARM-->
