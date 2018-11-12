@@ -1,0 +1,9 @@
+﻿    <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:viewmodel="clr-namespace:Smart_Parking_Lot.ViewModel"
+                    xmlns:model="clr-namespace:Smart_Parking_Lot.Model"
+                    xmlns:local="clr-namespace:Smart_Parking_Lot.Resource">
+    <viewmodel:MainViewModel x:Key="MainVM"></viewmodel:MainViewModel>
+    <viewmodel:CurrentCustomerViewModel x:Key="CustomerVM"></viewmodel:CurrentCustomerViewModel>
+    <viewmodel:CurrentPositionStatusViewModel x:Key="PositionVM"></viewmodel:CurrentPositionStatusViewModel>
+</ResourceDictionary>

@@ -1,0 +1,523 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CarParkingLotModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BlackList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DisplayName" Type="nvarchar(max)" />
+          <Property Name="LicensePlate" Type="nvarchar" MaxLength="50" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Block">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DisplayName" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Building">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="SumAvail" Type="int" />
+        </EntityType>
+        <EntityType Name="BuildingInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DisplayName" Type="nvarchar(max)" />
+          <Property Name="Location" Type="nvarchar(max)" />
+          <Property Name="Longtitude" Type="real" />
+          <Property Name="Latitude" Type="real" />
+          <Property Name="Url" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="CarParkingLayout">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BuildingID" Type="int" />
+          <Property Name="BlockID" Type="int" />
+          <Property Name="PositionID" Type="int" />
+          <Property Name="StatusID" Type="int" />
+          <Property Name="UserID" Type="bigint" />
+          <Property Name="LicensePlate" Type="nvarchar" MaxLength="50" />
+          <Property Name="ReservedTime" Type="datetime" />
+          <Property Name="ArrivalTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Fee">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DisplayName" Type="nvarchar(max)" />
+          <Property Name="Fee" Type="real" />
+        </EntityType>
+        <EntityType Name="PositionStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PositionStatus" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DisplayName" Type="nvarchar(max)" />
+          <Property Name="Username" Type="nvarchar(max)" />
+          <Property Name="Password" Type="nvarchar(max)" />
+          <Property Name="Balance" Type="bigint" />
+          <Property Name="Score" Type="int" />
+          <Property Name="UserTypeID" Type="int" />
+        </EntityType>
+        <EntityType Name="UserType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserType" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK__Building__ID__1DE57479">
+          <End Role="BuildingInfo" Type="Self.BuildingInfo" Multiplicity="1" />
+          <End Role="Building" Type="Self.Building" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="BuildingInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Building">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CarParkin__Block__1FCDBCEB">
+          <End Role="Block" Type="Self.Block" Multiplicity="0..1" />
+          <End Role="CarParkingLayout" Type="Self.CarParkingLayout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Block">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CarParkingLayout">
+              <PropertyRef Name="BlockID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CarParkin__Build__1ED998B2">
+          <End Role="BuildingInfo" Type="Self.BuildingInfo" Multiplicity="0..1" />
+          <End Role="CarParkingLayout" Type="Self.CarParkingLayout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BuildingInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CarParkingLayout">
+              <PropertyRef Name="BuildingID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CarParkin__Statu__20C1E124">
+          <End Role="PositionStatus" Type="Self.PositionStatus" Multiplicity="0..1" />
+          <End Role="CarParkingLayout" Type="Self.CarParkingLayout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PositionStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CarParkingLayout">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CarParkin__UserI__239E4DCF">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="CarParkingLayout" Type="Self.CarParkingLayout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CarParkingLayout">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Users__UserTypeI__108B795B">
+          <End Role="UserType" Type="Self.UserType" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="UserTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CarParkingLotModelStoreContainer">
+          <EntitySet Name="BlackList" EntityType="Self.BlackList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Block" EntityType="Self.Block" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Building" EntityType="Self.Building" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BuildingInfo" EntityType="Self.BuildingInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CarParkingLayout" EntityType="Self.CarParkingLayout" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fee" EntityType="Self.Fee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PositionStatus" EntityType="Self.PositionStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserType" EntityType="Self.UserType" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Building__ID__1DE57479" Association="Self.FK__Building__ID__1DE57479">
+            <End Role="BuildingInfo" EntitySet="BuildingInfo" />
+            <End Role="Building" EntitySet="Building" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CarParkin__Block__1FCDBCEB" Association="Self.FK__CarParkin__Block__1FCDBCEB">
+            <End Role="Block" EntitySet="Block" />
+            <End Role="CarParkingLayout" EntitySet="CarParkingLayout" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CarParkin__Build__1ED998B2" Association="Self.FK__CarParkin__Build__1ED998B2">
+            <End Role="BuildingInfo" EntitySet="BuildingInfo" />
+            <End Role="CarParkingLayout" EntitySet="CarParkingLayout" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CarParkin__Statu__20C1E124" Association="Self.FK__CarParkin__Statu__20C1E124">
+            <End Role="PositionStatus" EntitySet="PositionStatus" />
+            <End Role="CarParkingLayout" EntitySet="CarParkingLayout" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CarParkin__UserI__239E4DCF" Association="Self.FK__CarParkin__UserI__239E4DCF">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="CarParkingLayout" EntitySet="CarParkingLayout" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Users__UserTypeI__108B795B" Association="Self.FK__Users__UserTypeI__108B795B">
+            <End Role="UserType" EntitySet="UserType" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CarParkingLotModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BlackList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LicensePlate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Block">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CarParkingLayouts" Relationship="Self.FK__CarParkin__Block__1FCDBCEB" FromRole="Block" ToRole="CarParkingLayout" />
+        </EntityType>
+        <EntityType Name="Building">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="SumAvail" Type="Int32" />
+          <NavigationProperty Name="BuildingInfo" Relationship="Self.FK__Building__ID__1DE57479" FromRole="Building" ToRole="BuildingInfo" />
+        </EntityType>
+        <EntityType Name="BuildingInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Location" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Longtitude" Type="Single" />
+          <Property Name="Latitude" Type="Single" />
+          <Property Name="Url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Building" Relationship="Self.FK__Building__ID__1DE57479" FromRole="BuildingInfo" ToRole="Building" />
+          <NavigationProperty Name="CarParkingLayouts" Relationship="Self.FK__CarParkin__Build__1ED998B2" FromRole="BuildingInfo" ToRole="CarParkingLayout" />
+        </EntityType>
+        <EntityType Name="CarParkingLayout">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BuildingID" Type="Int32" />
+          <Property Name="BlockID" Type="Int32" />
+          <Property Name="PositionID" Type="Int32" />
+          <Property Name="StatusID" Type="Int32" />
+          <Property Name="UserID" Type="Int64" />
+          <Property Name="LicensePlate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReservedTime" Type="DateTime" Precision="3" />
+          <Property Name="ArrivalTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Block" Relationship="Self.FK__CarParkin__Block__1FCDBCEB" FromRole="CarParkingLayout" ToRole="Block" />
+          <NavigationProperty Name="BuildingInfo" Relationship="Self.FK__CarParkin__Build__1ED998B2" FromRole="CarParkingLayout" ToRole="BuildingInfo" />
+          <NavigationProperty Name="PositionStatu" Relationship="Self.FK__CarParkin__Statu__20C1E124" FromRole="CarParkingLayout" ToRole="PositionStatus" />
+          <NavigationProperty Name="User" Relationship="Self.FK__CarParkin__UserI__239E4DCF" FromRole="CarParkingLayout" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Fee">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Fee1" Type="Single" />
+        </EntityType>
+        <EntityType Name="PositionStatu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PositionStatus" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CarParkingLayouts" Relationship="Self.FK__CarParkin__Statu__20C1E124" FromRole="PositionStatus" ToRole="CarParkingLayout" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Balance" Type="Int64" />
+          <Property Name="Score" Type="Int32" />
+          <Property Name="UserTypeID" Type="Int32" />
+          <NavigationProperty Name="CarParkingLayouts" Relationship="Self.FK__CarParkin__UserI__239E4DCF" FromRole="Users" ToRole="CarParkingLayout" />
+          <NavigationProperty Name="UserType" Relationship="Self.FK__Users__UserTypeI__108B795B" FromRole="Users" ToRole="UserType" />
+        </EntityType>
+        <EntityType Name="UserType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserType1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Users__UserTypeI__108B795B" FromRole="UserType" ToRole="Users" />
+        </EntityType>
+        <Association Name="FK__CarParkin__Block__1FCDBCEB">
+          <End Role="Block" Type="Self.Block" Multiplicity="0..1" />
+          <End Role="CarParkingLayout" Type="Self.CarParkingLayout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Block">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CarParkingLayout">
+              <PropertyRef Name="BlockID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Building__ID__1DE57479">
+          <End Role="BuildingInfo" Type="Self.BuildingInfo" Multiplicity="1" />
+          <End Role="Building" Type="Self.Building" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="BuildingInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Building">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CarParkin__Build__1ED998B2">
+          <End Role="BuildingInfo" Type="Self.BuildingInfo" Multiplicity="0..1" />
+          <End Role="CarParkingLayout" Type="Self.CarParkingLayout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BuildingInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CarParkingLayout">
+              <PropertyRef Name="BuildingID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CarParkin__Statu__20C1E124">
+          <End Role="PositionStatus" Type="Self.PositionStatu" Multiplicity="0..1" />
+          <End Role="CarParkingLayout" Type="Self.CarParkingLayout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PositionStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CarParkingLayout">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CarParkin__UserI__239E4DCF">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="CarParkingLayout" Type="Self.CarParkingLayout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CarParkingLayout">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Users__UserTypeI__108B795B">
+          <End Role="UserType" Type="Self.UserType" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="UserTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CarParkingLotEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BlackLists" EntityType="Self.BlackList" />
+          <EntitySet Name="Blocks" EntityType="Self.Block" />
+          <EntitySet Name="Buildings" EntityType="Self.Building" />
+          <EntitySet Name="BuildingInfoes" EntityType="Self.BuildingInfo" />
+          <EntitySet Name="CarParkingLayouts" EntityType="Self.CarParkingLayout" />
+          <EntitySet Name="Fees" EntityType="Self.Fee" />
+          <EntitySet Name="PositionStatus" EntityType="Self.PositionStatu" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="UserTypes" EntityType="Self.UserType" />
+          <AssociationSet Name="FK__CarParkin__Block__1FCDBCEB" Association="Self.FK__CarParkin__Block__1FCDBCEB">
+            <End Role="Block" EntitySet="Blocks" />
+            <End Role="CarParkingLayout" EntitySet="CarParkingLayouts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Building__ID__1DE57479" Association="Self.FK__Building__ID__1DE57479">
+            <End Role="BuildingInfo" EntitySet="BuildingInfoes" />
+            <End Role="Building" EntitySet="Buildings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CarParkin__Build__1ED998B2" Association="Self.FK__CarParkin__Build__1ED998B2">
+            <End Role="BuildingInfo" EntitySet="BuildingInfoes" />
+            <End Role="CarParkingLayout" EntitySet="CarParkingLayouts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CarParkin__Statu__20C1E124" Association="Self.FK__CarParkin__Statu__20C1E124">
+            <End Role="PositionStatus" EntitySet="PositionStatus" />
+            <End Role="CarParkingLayout" EntitySet="CarParkingLayouts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CarParkin__UserI__239E4DCF" Association="Self.FK__CarParkin__UserI__239E4DCF">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="CarParkingLayout" EntitySet="CarParkingLayouts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Users__UserTypeI__108B795B" Association="Self.FK__Users__UserTypeI__108B795B">
+            <End Role="UserType" EntitySet="UserTypes" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CarParkingLotModelStoreContainer" CdmEntityContainer="CarParkingLotEntities1">
+          <EntitySetMapping Name="BlackLists">
+            <EntityTypeMapping TypeName="CarParkingLotModel.BlackList">
+              <MappingFragment StoreEntitySet="BlackList">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="LicensePlate" ColumnName="LicensePlate" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Blocks">
+            <EntityTypeMapping TypeName="CarParkingLotModel.Block">
+              <MappingFragment StoreEntitySet="Block">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Buildings">
+            <EntityTypeMapping TypeName="CarParkingLotModel.Building">
+              <MappingFragment StoreEntitySet="Building">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SumAvail" ColumnName="SumAvail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BuildingInfoes">
+            <EntityTypeMapping TypeName="CarParkingLotModel.BuildingInfo">
+              <MappingFragment StoreEntitySet="BuildingInfo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Longtitude" ColumnName="Longtitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CarParkingLayouts">
+            <EntityTypeMapping TypeName="CarParkingLotModel.CarParkingLayout">
+              <MappingFragment StoreEntitySet="CarParkingLayout">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="BuildingID" ColumnName="BuildingID" />
+                <ScalarProperty Name="BlockID" ColumnName="BlockID" />
+                <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="LicensePlate" ColumnName="LicensePlate" />
+                <ScalarProperty Name="ReservedTime" ColumnName="ReservedTime" />
+                <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fees">
+            <EntityTypeMapping TypeName="CarParkingLotModel.Fee">
+              <MappingFragment StoreEntitySet="Fee">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="Fee1" ColumnName="Fee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PositionStatus">
+            <EntityTypeMapping TypeName="CarParkingLotModel.PositionStatu">
+              <MappingFragment StoreEntitySet="PositionStatus">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PositionStatus" ColumnName="PositionStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="CarParkingLotModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTypes">
+            <EntityTypeMapping TypeName="CarParkingLotModel.UserType">
+              <MappingFragment StoreEntitySet="UserType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserType1" ColumnName="UserType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
