@@ -8,8 +8,10 @@ using System.Windows;
 
 namespace Smart_Parking_Lot.ViewModel
 {
-    class MainViewModel:BaseViewModel
+   public class MainViewModel:BaseViewModel
     {
+        static public int currentBuildingID=1;
+        static public int currentBlockID=1;
         public MainViewModel()
         {
             

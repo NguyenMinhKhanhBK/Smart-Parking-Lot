@@ -1,8 +1,13 @@
 ﻿
 FC:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\App.xaml;;
 FC:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\MainWindow.xaml;;
-FC:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\Resource\gridAvailable.xaml;;
-FC:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\Resource\gridBooked.xaml;;
-FC:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\Resource\gridOccupied.xaml;;
+FC:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\Resource\Grid Available\AvailablePanel.xaml;;
+FC:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\Resource\Grid Available\gridAvailable.xaml;;
+FC:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\Resource\Grid Booked\gridBooked.xaml;;
+FC:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\Resource\Grid Occupied\gridOccupied.xaml;;
+FC:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\Resource\Grid Booked\BookedPanel.xaml;;
+FC:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\Resource\Grid Occupied\OccupiedPanel.xaml;;
 FC:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\Resource\ViewModelResource.xaml;;
+FC:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\Resource\Grid Maintenance\gridMaintenance.xaml;;
+FC:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\Resource\Grid Maintenance\MaintenancePanel.xaml;;
 

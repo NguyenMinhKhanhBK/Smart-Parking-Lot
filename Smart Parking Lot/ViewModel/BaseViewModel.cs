@@ -17,6 +17,11 @@ namespace Smart_Parking_Lot.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        internal void RaisePropertyChanged(string prop)
+        {
+            if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs(prop));
+        }
     }
     class RelayCommand<T> : ICommand
     {

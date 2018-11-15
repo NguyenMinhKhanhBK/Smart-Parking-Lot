@@ -10,6 +10,10 @@
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:MyResource="clr-namespace:Smart_Parking_Lot.Resource"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:model="clr-namespace:Smart_Parking_Lot.Model"
+    xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+    xmlns:grid_maintenance="clr-namespace:Smart_Parking_Lot.Resource.Grid_Maintenance"
     Width="1920"
     Height="1081"
     mc:Ignorable="d"
@@ -17,6 +21,7 @@
     DataContext="{StaticResource MainVM}"
     Icon="Image/icon.png"
     Title="Smart Parking Lot"
+    x:Name="mainwindow"
     WindowStartupLocation="Manual">
 
     <Window.Effect>
@@ -114,7 +119,7 @@
                                 </TextBlock.Effect>-->
                             </TextBlock>
                             <!--Divide the grid into 12 parts for each station-->
-                            <Grid Margin="0,60,0,10">
+                            <Grid Margin="0,60,0,10" DataContext="{StaticResource CarLayoutVM}">
                                 <Grid.Effect>
                                     <DropShadowEffect
                                         Color="#FFB9B9B9"
@@ -134,96 +139,162 @@
                                     <RowDefinition Height="1*" />
                                 </Grid.RowDefinitions>
                                 <!--Row 0 - Col 0 slot-->
-                                <Grid Grid.Row="0" Grid.Column="0">
-                                    <MyResource:gridBooked />
+                                <Grid 
+                                    Name="pos1"
+                                    Grid.Row="0" 
+                                    Grid.Column="0"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center">
+                                    <MyResource:gridBooked x:Name="pos1gridBooked" Visibility="Collapsed"/>
+                                    <MyResource:gridAvailable x:Name="pos1gridAvailable" Visibility="Collapsed"/>
+                                    <MyResource:gridOccupied x:Name="pos1gridOcupied" Visibility="Collapsed"/>
+                                    <grid_maintenance:gridMaintenance x:Name="pos1gridMaintenance" Visibility="Visible"></grid_maintenance:gridMaintenance>
+                                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" Text="1" Margin="10 0" FontSize="25" Foreground="White" ></TextBlock>
+                                    
                                 </Grid>
                                 <!--Row 0 - Col 1 slot-->
                                 <Grid
+                                    Name="pos2"
                                     Grid.Row="0"
                                     Grid.Column="1"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center">
-                                    <MyResource:gridAvailable />
+                                    <MyResource:gridBooked x:Name="pos2gridBooked" Visibility="Collapsed"/>
+                                    <MyResource:gridAvailable x:Name="pos2gridAvailable" Visibility="Collapsed"/>
+                                    <MyResource:gridOccupied x:Name="pos2gridOcupied"/>
+                                    <grid_maintenance:gridMaintenance x:Name="pos2gridMaintenance" Visibility="Collapsed"></grid_maintenance:gridMaintenance>
+                                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" Text="2" Margin="10 0" FontSize="25" Foreground="White" ></TextBlock>
                                 </Grid>
                                 <!--Row 1 - Col 0 slot-->
                                 <Grid
+                                    
+                                    Name="pos3"
                                     Grid.Row="1"
                                     Grid.Column="0"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center">
-                                    <MyResource:gridOccupied />
+                                    <MyResource:gridBooked x:Name="pos3gridBooked" Visibility="Visible"/>
+                                    <MyResource:gridAvailable x:Name="pos3gridAvailable" Visibility="Collapsed"/>
+                                    <MyResource:gridOccupied x:Name="pos3gridOcupied" Visibility="Collapsed"/>
+                                    <grid_maintenance:gridMaintenance x:Name="pos3gridMaintenance" Visibility="Collapsed"></grid_maintenance:gridMaintenance>
+                                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" Text="3" Margin="10 0" FontSize="25" Foreground="White" ></TextBlock>
                                 </Grid>
                                 <!--Row 1 - Col 1 slot-->
                                 <Grid
+                                    Name="pos4"
                                     Grid.Row="1"
                                     Grid.Column="1"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center">
-                                    <MyResource:gridAvailable />
+                                    <MyResource:gridBooked x:Name="pos4gridBooked" Visibility="Collapsed"/>
+                                    <MyResource:gridOccupied x:Name="pos4gridOcupied" Visibility="Collapsed"/>
+                                    <MyResource:gridAvailable x:Name="pos4gridAvailable"/>
+                                    <grid_maintenance:gridMaintenance x:Name="pos4gridMaintenance" Visibility="Collapsed"></grid_maintenance:gridMaintenance>
+                                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" Text="4" Margin="10 0" FontSize="25" Foreground="White" ></TextBlock>
                                 </Grid>
                                 <!--Row 2 - Col 0 slot-->
                                 <Grid
+                                    Name="pos5"
                                     Grid.Row="2"
                                     Grid.Column="0"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center">
-                                    <MyResource:gridBooked />
+                                    <MyResource:gridBooked x:Name="pos5gridBooked" Visibility="Collapsed"/>
+                                    <MyResource:gridOccupied x:Name="pos5gridOcupied" Visibility="Collapsed"/>
+                                    <MyResource:gridAvailable x:Name="pos5gridAvailable"/>
+                                    <grid_maintenance:gridMaintenance x:Name="pos5gridMaintenance" Visibility="Collapsed"></grid_maintenance:gridMaintenance>
+                                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" Text="5" Margin="10 0" FontSize="25" Foreground="White" ></TextBlock>
                                 </Grid>
                                 <!--Row 2 - Col 1 slot-->
                                 <Grid
+                                    Name="pos6"
                                     Grid.Row="2"
                                     Grid.Column="1"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center">
-                                    <MyResource:gridBooked />
+                                    <MyResource:gridBooked x:Name="pos6gridBooked" Visibility="Visible"/>
+                                    <MyResource:gridOccupied x:Name="pos6gridOcupied" Visibility="Collapsed"/>
+                                    <MyResource:gridAvailable x:Name="pos6gridAvailable" Visibility="Collapsed"/>
+                                    <grid_maintenance:gridMaintenance x:Name="pos6gridMaintenance" Visibility="Collapsed"></grid_maintenance:gridMaintenance>
+                                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" Text="6" Margin="10 0" FontSize="25" Foreground="White" ></TextBlock>
                                 </Grid>
                                 <!--Row 3 - Col 0 slot-->
                                 <Grid
+                                    Name="pos7"
                                     Grid.Row="3"
                                     Grid.Column="0"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center">
-                                    <MyResource:gridBooked />
+                                    <MyResource:gridBooked x:Name="pos7gridBooked" Visibility="Collapsed"/>
+                                    <MyResource:gridOccupied x:Name="pos7gridOcupied" Visibility="Collapsed"/>
+                                    <MyResource:gridAvailable x:Name="pos7gridAvailable"/>
+                                    <grid_maintenance:gridMaintenance x:Name="pos7gridMaintenance" Visibility="Collapsed"></grid_maintenance:gridMaintenance>
+                                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" Text="7" Margin="10 0" FontSize="25" Foreground="White" ></TextBlock>
                                 </Grid>
                                 <!--Row 3 - Col 1 slot-->
                                 <Grid
+                                    Name="pos8"
                                     Grid.Row="3"
                                     Grid.Column="1"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center">
-                                    <MyResource:gridBooked />
+                                    <MyResource:gridBooked x:Name="pos8gridBooked" Visibility="Collapsed"/>
+                                    <MyResource:gridOccupied x:Name="pos8gridOcupied" Visibility="Collapsed"/>
+                                    <MyResource:gridAvailable x:Name="pos8gridAvailable"/>
+                                    <grid_maintenance:gridMaintenance x:Name="pos8gridMaintenance" Visibility="Collapsed"></grid_maintenance:gridMaintenance>
+                                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" Text="8" Margin="10 0" FontSize="25" Foreground="White" ></TextBlock>
                                 </Grid>
                                 <!--Row 4 - Col 0 slot-->
                                 <Grid
+                                    Name="pos9"
                                     Grid.Row="4"
                                     Grid.Column="0"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center">
-                                    <MyResource:gridBooked />
+                                    <MyResource:gridBooked x:Name="pos9gridBooked" Visibility="Collapsed"/>
+                                    <MyResource:gridOccupied x:Name="pos9gridOcupied" Visibility="Collapsed"/>
+                                    <MyResource:gridAvailable x:Name="pos9gridAvailable"/>
+                                    <grid_maintenance:gridMaintenance x:Name="pos9gridMaintenance" Visibility="Collapsed"></grid_maintenance:gridMaintenance>
+                                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" Text="9" Margin="10 0" FontSize="25" Foreground="White" ></TextBlock>
                                 </Grid>
                                 <!--Row 4 - Col 1 slot-->
                                 <Grid
+                                    Name="pos10"
                                     Grid.Row="4"
                                     Grid.Column="1"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center">
-                                    <MyResource:gridBooked />
+                                    <MyResource:gridBooked x:Name="pos10gridBooked" Visibility="Collapsed"/>
+                                    <MyResource:gridOccupied x:Name="pos10gridOcupied" Visibility="Collapsed"/>
+                                    <MyResource:gridAvailable x:Name="pos10gridAvailable"/>
+                                    <grid_maintenance:gridMaintenance x:Name="pos10gridMaintenance" Visibility="Collapsed"></grid_maintenance:gridMaintenance>
+                                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" Text="10" Margin="10 0" FontSize="25" Foreground="White" ></TextBlock>
                                 </Grid>
                                 <!--Row 5 - Col 0 slot-->
                                 <Grid
+                                    Name="pos11"
                                     Grid.Row="5"
                                     Grid.Column="0"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center">
-                                    <MyResource:gridBooked />
+                                    <MyResource:gridBooked x:Name="pos11gridBooked" Visibility="Collapsed"/>
+                                    <MyResource:gridOccupied x:Name="pos11gridOcupied" Visibility="Collapsed"/>
+                                    <MyResource:gridAvailable x:Name="pos11gridAvailable" Visibility="Collapsed"/>
+                                    <grid_maintenance:gridMaintenance x:Name="pos11gridMaintenance" Visibility="Visible"></grid_maintenance:gridMaintenance>
+                                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" Text="11" Margin="10 0" FontSize="25" Foreground="White" ></TextBlock>
                                 </Grid>
                                 <!--Row 5 - Col 1 slot-->
                                 <Grid
+                                    Name="pos12"
                                     Grid.Row="5"
                                     Grid.Column="1"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center">
-                                    <MyResource:gridBooked />
+                                    <MyResource:gridBooked x:Name="pos12gridBooked" Visibility="Collapsed"/>
+                                    <MyResource:gridOccupied x:Name="pos12gridOcupied" Visibility="Collapsed"/>
+                                    <MyResource:gridAvailable x:Name="pos12gridAvailable"/>
+                                    <grid_maintenance:gridMaintenance x:Name="pos12gridMaintenance" Visibility="Collapsed"></grid_maintenance:gridMaintenance>
+                                    <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" Text="12" Margin="10 0" FontSize="25" Foreground="White" ></TextBlock>
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -243,8 +314,8 @@
                                     RenderingBias="Quality"
                                     ShadowDepth="5" />
                             </Border.Effect>
-                            <StackPanel>
-                                <TextBlock
+                            <DockPanel>
+                                <TextBlock DockPanel.Dock="Top"
                                     Margin="40 10 0 0"
                                     FontSize="40"
                                     Foreground="#FF5D00FF"
@@ -253,58 +324,42 @@
                                         <DropShadowEffect Color="#FFC5C5C5" RenderingBias="Quality" BlurRadius="30" ShadowDepth="2"/>
                                     </TextBlock.Effect>-->
                                 </TextBlock>
-                                <Grid>
-                                    <dxc:ChartControl Margin="0 0 0 0">
-                                        <dxc:ChartControl.Legends>
-                                            <dxc:Legend
-                                                FontSize="10"
-                                                Foreground="#FF050505"
-                                                HorizontalPosition="Left"
-                                                IndentFromDiagram="-10"
-                                                ItemVisibilityMode="Default"
-                                                MarkerMode="Marker"
-                                                Orientation="Vertical"
-                                                ReverseItems="False"
-                                                VerticalPosition="Top"
-                                                Visible="True">
-                                                <dxc:Legend.Title>
-                                                    <dxc:LegendTitle
-                                                        HorizontalAlignment="Center"
-                                                        Content="Tổng số chỗ: 12"
-                                                        Visible="{x:Null}" />
-                                                </dxc:Legend.Title>
-                                            </dxc:Legend>
-                                        </dxc:ChartControl.Legends>
-                                        <dxc:SimpleDiagram2D
-                                            Margin="20"
-                                            HorizontalAlignment="Right"
-                                            VerticalAlignment="Bottom">
-                                            <dxc:NestedDonutSeries2D
-                                               
-                                                DisplayName="Thống kê hiện tại"
-                                                LabelsVisibility="False"
-                                                LegendTextPattern="{}{A}:   {V}"
-                                                ShowInLegend="True"
-                                                ToolTipPointPattern="{}{V}"
-                                                Visible="True"
-                                                Weight="2">
-                                                <dxc:SeriesPoint
-                                                    Value="5"
-                                                    Argument="Số chỗ trống"
-                                                    Brush="#FF00C52A" />
-                                                <dxc:SeriesPoint
-                                                    Value="3"
-                                                    Argument="Số chỗ được đặt"
-                                                    Brush="#FFFFD100" />
-                                                <dxc:SeriesPoint
-                                                    Value="4"
-                                                    Argument="Số chỗ có xe"
-                                                    Brush="Red" />
-                                            </dxc:NestedDonutSeries2D>
-                                        </dxc:SimpleDiagram2D>
-                                    </dxc:ChartControl>
+                                <Grid  Margin="10" DataContext="{StaticResource PositionVM}">
+
+                                    <lvc:PieChart InnerRadius="70" LegendLocation="Right"  Hoverable="False" FontSize="14">
+                                        <lvc:PieChart.Series>
+                                            <lvc:PieSeries Title="Còn trống" Values="{Binding currentAvailable}" DataLabels="True" FontSize="14">
+                                                <lvc:PieSeries.Fill>
+                                                    <SolidColorBrush Color="#FF007E00" Opacity="1"/>
+                                                </lvc:PieSeries.Fill>
+                                            </lvc:PieSeries>
+                                            <lvc:PieSeries Title="Đang có xe" Values="{Binding currentOccupied}" DataLabels="True" FontSize="14">
+                                                <lvc:PieSeries.Fill>
+                                                    <SolidColorBrush Color="#FFFF1200" Opacity="1"/>
+                                                </lvc:PieSeries.Fill>
+                                            </lvc:PieSeries>
+                                            <lvc:PieSeries Title="Đã đặt" Values="{Binding currentBooked}" DataLabels="True" FontSize="14">
+                                                <lvc:PieSeries.Fill>
+                                                    <SolidColorBrush Color="#FFFFBF00" Opacity="1"/>
+                                                </lvc:PieSeries.Fill>
+                                            </lvc:PieSeries>
+                                            <lvc:PieSeries Title="Đang bảo trì" Values="{Binding currentMaintenance}" DataLabels="True" FontSize="14">
+                                                <lvc:PieSeries.Fill>
+                                                    <SolidColorBrush Color="#FF474747" Opacity="1"/>
+                                                </lvc:PieSeries.Fill>
+                                            </lvc:PieSeries>
+                                        </lvc:PieChart.Series>
+                                        <lvc:PieChart.ChartLegend>
+                                            <lvc:DefaultLegend BulletSize="20"></lvc:DefaultLegend>
+                                        </lvc:PieChart.ChartLegend>
+                                        <lvc:PieChart.DataTooltip>
+                                            <lvc:DefaultTooltip BulletSize="20"></lvc:DefaultTooltip>
+                                        </lvc:PieChart.DataTooltip>
+                                    </lvc:PieChart>
+
+
                                 </Grid>
-                            </StackPanel>
+                            </DockPanel>
                         </Border>
                     </Grid>
                     <!--ALARM-->
@@ -500,11 +555,12 @@
                                         FontSize="16"
                                         AutoGenerateColumns="False"
                                         ScrollViewer.VerticalScrollBarVisibility="Auto" Background="White" Foreground="#DD000000" MinColumnWidth="30" GridLinesVisibility="Horizontal" VerticalGridLinesBrush="Gainsboro" HorizontalGridLinesBrush="#FF959595">
-                                        
+
 
                                         <DataGrid.Columns>
                                             <DataGridTextColumn Header="STT" Binding="{Binding STT}" FontSize="16"  ></DataGridTextColumn>
                                             <DataGridTextColumn Header="Tên khách hàng" Binding="{Binding DisplayName}" FontSize="16" Width="180"></DataGridTextColumn>
+                                            <DataGridTextColumn Header="Vị trí" Binding="{Binding PosID}" FontSize="16" Width="100"></DataGridTextColumn>
                                             <DataGridTextColumn Header="Biển số xe" Binding="{Binding LicensePlate}" FontSize="16" Width="150"></DataGridTextColumn>
                                             <DataGridTextColumn Header="Trạng thái" Binding="{Binding Status}" FontSize="16" Width="150" ></DataGridTextColumn>
                                             <DataGridTextColumn Header="Số điện thoại" Binding="{Binding PhoneNumber}" FontSize="16" Width="150" ></DataGridTextColumn>

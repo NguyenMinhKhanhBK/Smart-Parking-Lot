@@ -69,11 +69,20 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>
     </Reference>
     <Reference Include="MaterialDesignThemes.Wpf, Version=2.5.0.1205, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.2.5.0.1205\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -84,6 +93,9 @@
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -105,60 +117,84 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\BlackList.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Block.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Building.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\BuildingInfo.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\CarParkingLayout.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\CurrentCustomer.cs" />
     <Compile Include="Model\CurrentPositionStatus.cs" />
+    <Compile Include="Model\DataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Model\DataProvider.cs" />
     <Compile Include="Model\Fee.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\PositionStatu.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Resource\Grid Available\gridAvailableViewModel.cs" />
+    <Compile Include="Resource\Grid Booked\gridBookedViewModel.cs" />
+    <Compile Include="Resource\Grid Available\AvailablePanel.xaml.cs">
+      <DependentUpon>AvailablePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Grid Available\AvailablePanelViewModel.cs" />
     <Compile Include="Model\User.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\UserType.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Resource\gridAvailable.xaml.cs">
+    <Compile Include="Resource\Grid Available\gridAvailable.xaml.cs">
       <DependentUpon>gridAvailable.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Resource\gridBooked.xaml.cs">
+    <Compile Include="Resource\Grid Booked\gridBooked.xaml.cs">
       <DependentUpon>gridBooked.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Resource\gridOccupied.xaml.cs">
+    <Compile Include="Resource\Grid Maintenance\gridMaintenance.xaml.cs">
+      <DependentUpon>gridMaintenance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Grid Maintenance\gridMaintenanceViewModel.cs" />
+    <Compile Include="Resource\Grid Maintenance\MaintenancePanel.xaml.cs">
+      <DependentUpon>MaintenancePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Grid Maintenance\MaintenancePanelViewModel.cs" />
+    <Compile Include="Resource\Grid Occupied\gridOccupied.xaml.cs">
       <DependentUpon>gridOccupied.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Resource\Grid Booked\BookedPanel.xaml.cs">
+      <DependentUpon>BookedPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Grid Booked\BookedPanelViewModel.cs" />
+    <Compile Include="Resource\Grid Occupied\gridOccupiedViewModel.cs" />
+    <Compile Include="Resource\Grid Occupied\OccupiedPanel.xaml.cs">
+      <DependentUpon>OccupiedPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Grid Occupied\OccupiedPanelViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\CarLayoutViewModel.cs" />
     <Compile Include="ViewModel\CurrentCustomerViewModel.cs" />
     <Compile Include="ViewModel\CurrentPositionStatusViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
@@ -174,15 +210,35 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Resource\gridAvailable.xaml">
+    <Page Include="Resource\Grid Available\AvailablePanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resource\gridBooked.xaml">
+    <Page Include="Resource\Grid Available\gridAvailable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resource\gridOccupied.xaml">
+    <Page Include="Resource\Grid Booked\gridBooked.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Grid Maintenance\gridMaintenance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Grid Maintenance\MaintenancePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Grid Occupied\gridOccupied.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Grid Booked\BookedPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\Grid Occupied\OccupiedPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -210,12 +266,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Model\Model1.edmx">
+    <EntityDeploy Include="Model\DataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <None Include="Model\DataModel.edmx.diagram">
+      <DependentUpon>DataModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -272,16 +328,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model\Model1.Context.tt">
+    <Content Include="Model\DataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>DataModel.edmx</DependentUpon>
+      <LastGenOutput>DataModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model\Model1.tt">
+    <Content Include="Model\DataModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>DataModel.edmx</DependentUpon>
+      <LastGenOutput>DataModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

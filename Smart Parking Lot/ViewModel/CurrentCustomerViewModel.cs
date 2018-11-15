@@ -5,19 +5,41 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Threading;
 
 namespace Smart_Parking_Lot.ViewModel
 {
-    class CurrentCustomerViewModel : BaseViewModel
+   public class CurrentCustomerViewModel : BaseViewModel
     {
+        DispatcherTimer timerCus = new DispatcherTimer();
         private ObservableCollection<CurrentCustomer> _currentCustomerList;
         public ObservableCollection<CurrentCustomer> currentCustomerList { get => _currentCustomerList; set { _currentCustomerList = value; OnPropertyChanged(); } }
 
         public CurrentCustomerViewModel()
         {
-           
-            currentCustomerList = new ObservableCollection<CurrentCustomer>();
-            var LayoutTableList = DataProvider.Ins.Data.CarParkingLayouts.Where(p=>p.StatusID!=1);
+            timerCus.Interval = new TimeSpan(0, 0, 3);
+            timerCus.Tick += UpdateData;
+            timerCus.Start();
+            currentCustomerList= GetDataFromSql();
+        }
+
+        private void UpdateData(object sender, EventArgs e)
+        {
+            var temp = GetDataFromSql();
+            if (currentCustomerList!=temp)
+            {
+                currentCustomerList = temp;
+                RaisePropertyChanged("currentCustomerList");
+            }
+        }
+
+        ObservableCollection<CurrentCustomer> GetDataFromSql()
+        {
+            DataProvider.Ins.Data.Dispose();
+            DataProvider.Ins.Data = new CarParkingLotEntities();
+
+            ObservableCollection<CurrentCustomer> currentCustomerList1 = new ObservableCollection<CurrentCustomer>();
+            var LayoutTableList = DataProvider.Ins.Data.CarParkingLayouts.Where(p => p.StatusID != 1);
             int i = 0;
             foreach (var item in LayoutTableList)
             {
@@ -27,6 +49,7 @@ namespace Smart_Parking_Lot.ViewModel
                 var DisplayName = "";
                 var LicensePlate = "";
                 var Status = DataProvider.Ins.Data.PositionStatus.Where(p => p.ID == item.StatusID).FirstOrDefault().PositionStatus;
+                var Position = item.ID;
                 var PhoneNumber = "";
                 Nullable<DateTime> ReservedTime = null;
                 Nullable<DateTime> ArrivalTime = null;
@@ -44,6 +67,7 @@ namespace Smart_Parking_Lot.ViewModel
 
                 CurrentCustomer currentItem = new CurrentCustomer();
                 currentItem.STT = STT;
+                currentItem.PosID = Position;
                 currentItem.DisplayName = DisplayName;
                 currentItem.LicensePlate = LicensePlate;
                 currentItem.Status = Status;
@@ -51,8 +75,9 @@ namespace Smart_Parking_Lot.ViewModel
                 currentItem.ReservedTime = ReservedTime;
                 currentItem.ArrivalTime = ArrivalTime;
 
-                currentCustomerList.Add(currentItem);
+                currentCustomerList1.Add(currentItem);
             }
+            return currentCustomerList1;
         }
     }
 }

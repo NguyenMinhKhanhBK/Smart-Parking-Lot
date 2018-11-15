@@ -10,6 +10,7 @@ namespace Smart_Parking_Lot.Model
     {
         public int STT { get; set; }
         public string DisplayName { get; set; }
+        public int PosID { get; set; }
         public string LicensePlate { get; set; }
         public string Status { get; set; }
         public string PhoneNumber { get; set; }

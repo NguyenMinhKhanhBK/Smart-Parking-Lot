@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\UX410\Documents\Visual Studio 2017\WPF\Smart Parking Lot\Smart Parking Lot\App.xaml
-5347246435
-2-1556844510
-31-85297939
-34387090564
-MainWindow.xaml;Resource\gridAvailable.xaml;Resource\gridBooked.xaml;Resource\gridOccupied.xaml;Resource\ViewModelResource.xaml;
+101718053218
+2948482949
+45-657389074
+38-1462332032
+MainWindow.xaml;Resource\Grid Available\AvailablePanel.xaml;Resource\Grid Available\gridAvailable.xaml;Resource\Grid Booked\gridBooked.xaml;Resource\Grid Maintenance\gridMaintenance.xaml;Resource\Grid Maintenance\MaintenancePanel.xaml;Resource\Grid Occupied\gridOccupied.xaml;Resource\Grid Booked\BookedPanel.xaml;Resource\Grid Occupied\OccupiedPanel.xaml;Resource\ViewModelResource.xaml;
 
-False
+True
 

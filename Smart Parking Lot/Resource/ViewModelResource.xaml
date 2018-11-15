@@ -2,8 +2,15 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:viewmodel="clr-namespace:Smart_Parking_Lot.ViewModel"
                     xmlns:model="clr-namespace:Smart_Parking_Lot.Model"
-                    xmlns:local="clr-namespace:Smart_Parking_Lot.Resource">
+                    xmlns:local="clr-namespace:Smart_Parking_Lot.Resource"
+                    xmlns:resource_panel="clr-namespace:Smart_Parking_Lot.Model.Resource_Panel"
+                    xmlns:grid_available="clr-namespace:Smart_Parking_Lot.Resource.Grid_Available"
+                    xmlns:grid_booked="clr-namespace:Smart_Parking_Lot.Resource.Grid_Booked">
     <viewmodel:MainViewModel x:Key="MainVM"></viewmodel:MainViewModel>
     <viewmodel:CurrentCustomerViewModel x:Key="CustomerVM"></viewmodel:CurrentCustomerViewModel>
     <viewmodel:CurrentPositionStatusViewModel x:Key="PositionVM"></viewmodel:CurrentPositionStatusViewModel>
+    <resource_panel:AvailablePanelViewModel x:Key="AvailPanelVM"></resource_panel:AvailablePanelViewModel>
+    <grid_available:gridAvailableViewModel x:Key="gridAvailableVM"></grid_available:gridAvailableViewModel>
+    <grid_booked:gridBookedViewModel x:Key="gridBookedVM"></grid_booked:gridBookedViewModel>
+    <viewmodel:CarLayoutViewModel x:Key="CarLayoutVM"></viewmodel:CarLayoutViewModel>
 </ResourceDictionary>

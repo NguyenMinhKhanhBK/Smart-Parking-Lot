@@ -23,11 +23,11 @@ namespace Smart_Parking_Lot.Model
             }
         }
 
-        public CarParkingLotEntities1 Data { get; set; }
+        public CarParkingLotEntities Data { get; set; }
 
-        private DataProvider()
+        public DataProvider()
         {
-            Data = new CarParkingLotEntities1();
+            Data = new CarParkingLotEntities();
           
         }
     }

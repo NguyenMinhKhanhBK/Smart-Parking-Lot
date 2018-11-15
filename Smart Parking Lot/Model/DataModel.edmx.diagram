@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="40ea96dcb02b4df48c260281ee293bda" Name="Diagram1">
+        <EntityTypeShape EntityType="CarParkingLotModel.BlackList" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarParkingLotModel.Block" Width="1.5" PointX="3.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarParkingLotModel.Building" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarParkingLotModel.BuildingInfo" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarParkingLotModel.CarParkingLayout" Width="1.5" PointX="6" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarParkingLotModel.Fee" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarParkingLotModel.PositionStatu" Width="1.5" PointX="3.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarParkingLotModel.User" Width="1.5" PointX="3.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarParkingLotModel.UserType" Width="1.5" PointX="1.5" PointY="11.625" IsExpanded="true" />
+        <AssociationConnector Association="CarParkingLotModel.FK__CarParkin__Block__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="CarParkingLotModel.FK__Building__ID__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="CarParkingLotModel.FK__CarParkin__Build__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="CarParkingLotModel.FK__CarParkin__Statu__20C1E124" ManuallyRouted="false" />
+        <AssociationConnector Association="CarParkingLotModel.FK__CarParkin__UserI__239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="CarParkingLotModel.FK__Users__UserTypeI__108B795B" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
