@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Smart_Parking_Lot.Model
 {
-    class CurrentPositionStatus
+ public   class CurrentPositionStatus
     {
         public int Available{get; set; }
         public int Booked { get; set; }

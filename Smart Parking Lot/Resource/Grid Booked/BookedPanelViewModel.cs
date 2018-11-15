@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace Smart_Parking_Lot.Resource.Resource_Panel
 {
-    class BookedPanelViewModel: BaseViewModel
+    public class BookedPanelViewModel: BaseViewModel
     {
         #region COMMAND
         public ICommand MoveCommand { get; set; }

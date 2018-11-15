@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace Smart_Parking_Lot.Resource.Grid_Maintenance
 {
-    class gridMaintenanceViewModel: BaseViewModel
+ public   class gridMaintenanceViewModel: BaseViewModel
     {
         public ICommand GridClickCommand { get; set; }
         private string _positionID;
